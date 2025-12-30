@@ -21,12 +21,7 @@ const WhyUs = () => {
           <p className="about-description">
             We’ve Lived In Natai For 20+ Years And Have Built A Reputation Based On Trust And Responsibility, Never Disappointing Our Neighbors.
           </p>
-          {/* <p className="about-description">
-            We’ve Lived In Natai For 20+ Years And Have Built A Reputation Based On Trust And Responsibility, Never Disappointing Our Neighbors.
-          </p>
-          <p className="about-description">
-            We’ve Lived In Natai For 20+ Years And Have Built A Reputation Based On Trust And Responsibility, Never Disappointing Our Neighbors.
-          </p> */}
+         
           
         </div>
         {/* Left: Image */}
