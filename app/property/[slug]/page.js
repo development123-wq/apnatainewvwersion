@@ -173,6 +173,7 @@ export default async function PropertyDetail(context) {
             boxShadow: "0 10px 40px rgba(0,0,0,0.08), 0 2px 10px rgba(0,0,0,0.04)",
             backdropFilter: "blur(10px)",
           }}
+          className="ppoverview"
         >
           <div
             style={{
@@ -211,6 +212,7 @@ export default async function PropertyDetail(context) {
               gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
               gap: 20,
             }}
+           
           >
             <div
               style={{
@@ -352,6 +354,7 @@ export default async function PropertyDetail(context) {
             gap: 20, 
             alignItems: 'start'
           }}
+           className="custom-desccss"
         >
           {/* LEFT BOX - Property Details */}
           <div
@@ -364,6 +367,7 @@ export default async function PropertyDetail(context) {
               backdropFilter: "blur(10px)",
               minHeight: 600
             }}
+            className="details-box"
           >
         {/* DESCRIPTION */}
         {data.description && (
