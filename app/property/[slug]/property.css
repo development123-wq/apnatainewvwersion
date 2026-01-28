@@ -41,6 +41,10 @@
 .catalog-section{
   background:#fff;
 }
+.rh_content h3:nth-child(1){
+  font-size:30px !important;
+  margin-bottom:20px;
+}
 .rh_content p,.rh_content li span,.rh_content li,.rh_property__additional li span,.wp-block-table table td{
   font-size:15px !important;
   margin-bottom:20px!important;
@@ -49,8 +53,11 @@
   line-height: 20px !important;
 
 }
+.detailagent{
+  color:#ffffff !important;
+}
 .rh_content h2,.rh_content h3 span,.rh_content h2 span{
-  font-size:25px !important;
+  font-size:20px !important;
   color:#000!important;
   line-height: 30px !important;
   letter-spacing: 0px !important;

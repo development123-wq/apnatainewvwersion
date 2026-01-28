@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .agent-wrapper {
   display: flex;
   justify-content: space-between;
@@ -100,8 +101,11 @@
 .agent-name {
   font-size: 22px;
   font-weight: 600;
+  line-height:36px;
   margin: 0;
   color:#000;
+   font-family: "Instrument Sans", sans-serif !important;
+
 }
 
 .agent-listings {
@@ -144,4 +148,86 @@
 
 .agent-wrapper-two .slick-slide {
   margin-right: 32px !important;
+}
+
+
+@media(min-width:767px){
+  .left-side h3{
+    font-size:40px !important;
+   font-family: "Instrument Sans", sans-serif !important;
+
+  }
+  .left-side .highlight-title{
+    font-size:60px !important;
+   font-family: "Instrument Sans", sans-serif !important;
+  }
+.left-side p{
+  font-size:15px !important;
+  font-weight: 400!important;
+  line-height: 23px!important;
+  text-align:left!important;
+}
+.agent-description{
+  font-size:12px;
+  text-align:left;
+}
+}
+
+.agent-card-wrapper {
+  display: block !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.agent-card-wrapper:hover {
+  transform: translateY(-10px) !important;
+  
+}
+
+.agent-card-wrapper.hovered .agent-card {
+  transform: scale(1.02) !important;
+}
+
+.agent-card-wrapper.hovered .agent-img {
+  transform: scale(1.1) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.agent-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.agent-img {
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
+
+.agent-card-wrapper:hover .agent-name {
+  color: #000 !important;
+}
+
+.agent-card-wrapper:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(0,123,255,0.05));
+  border-radius: 12px;
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+.agent-contact-mobile a{
+  color:#000;
+  font-size:14px;
+  
+}
+.agent-contact-mobile{
+  margin-top:5px!important;
 }

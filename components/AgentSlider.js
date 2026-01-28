@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Slider from 'react-slick';
 import Image from 'next/image';
+import Link from 'next/link';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../public/css/AgentSlider.css';
@@ -11,6 +12,7 @@ export default function AgentSlider() {
   const sliderRef = useRef(null);
   const [agents, setAgents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [hoveredAgentId, setHoveredAgentId] = useState(null);
 
   const settings = {
     dots: false,
@@ -53,16 +55,20 @@ export default function AgentSlider() {
     fetchAgents();
   }, []);
 
+  const cleanDescription = (html) => {
+    return html ? html.replace(/<[^>]+>/g, '').substring(0, 200) + '...' : '';
+  };
+
   return (
     <div className="agent-wrapper agent-wrapper-two">
       <div className="left-side">
         <h3 className="main-title" style={{color:'#000'}}>Meet</h3>
         <h2 className="highlight-title">Our Agents</h2>
         <p className="sub-text" style={{color:'#000',lineHeight:'20px'}}>
-          Connect with our expert agents, dedicated to guiding you with clarity, trust, and deep market knowledge. Experience seamless support from professionals who prioritize your goals.
+          Connect with our expert agents, dedicated to guiding you with clarity, trust, and deep market knowledge. 
+          Experience seamless support from professionals who prioritize your goals.
         </p>
 
-        {/* Custom arrows below text */}
         <div className="arrows-desktop">
           <div className="custom-arrow" onClick={() => sliderRef.current?.slickPrev()}>
             ❮
@@ -75,28 +81,44 @@ export default function AgentSlider() {
 
       <div className="right-side">
         <Slider ref={sliderRef} {...settings}>
-          {agents.map((agent, idx) => (
-            <div className="agent-card" key={idx}>
-              <div className="agent-header">
-                <Image
-                  src={`https://techzenondev.com/apnatai/public/${agent.image}`}
-                  width={80}
-                  height={80}
-                  alt={agent.name}
-                  className="agent-img"
-                  style={{objectFit:'cover'}}
-                />
-                <div>
-                  <h3 className="agent-name" style={{color:'#000'}}>{agent.title}</h3>
-                  <p className="agent-listings">{agent.short_description}</p>
+          {agents.map((agent) => (
+            <Link 
+              key={agent.id || agent.url} 
+              href={agent.url || '/agent'}
+              className={`agent-card-wrapper ${hoveredAgentId === agent.id ? 'hovered' : ''}`}
+              onMouseEnter={() => setHoveredAgentId(agent.id)}
+              onMouseLeave={() => setHoveredAgentId(null)}
+            >
+              <div className="agent-card">
+                <div className="agent-header">
+                  <Image
+                    src={`https://techzenondev.com/apnatai/public/${agent.image}`}
+                    width={80}
+                    height={80}
+                    alt={agent.name}
+                    className="agent-img"
+                    style={{objectFit:'cover'}}
+                  />
+                  <div>
+                    <h3 className="agent-name" style={{color:'#000'}}>{agent.title}</h3>
+                    
+                    <p className="agent-listings">{agent.short_description}</p>
+                    <div className="agent-contact-mobile">
+                  <a href={`tel:${agent.mobile || agent.phone}`} className="agent-phone">
+                    📞 {agent.mobile || agent.phone || '+91 98765 43210'}
+                  </a>
                 </div>
-              </div>
+                  </div>
+                </div>
 
-              {/* FIXED: remove HTML tags from description */}
-              <p className="agent-description" style={{color:'#000',lineHeight:'20px'}}>
-                {agent.description ? agent.description.replace(/<[^>]+>/g, '') : ''}
-              </p>
-            </div>
+                <p className="agent-description" style={{color:'#000',lineHeight:'20px'}}>
+                  {cleanDescription(agent.description)}
+                </p>
+
+                {/* ✅ MOBILE MEIN AGENT NUMBER NIEE */}
+                
+              </div>
+            </Link>
           ))}
         </Slider>
       </div>

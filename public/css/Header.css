@@ -138,7 +138,9 @@
     display: flex;
     gap: 48px; /* space-x-12 */
 }
-
+.contactInfo a{
+    font-family: "Poppins", sans-serif !important;
+}
 .contactItem {
     display: flex;
     align-items: center;

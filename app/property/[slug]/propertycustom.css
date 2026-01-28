@@ -1,0 +1,14 @@
+.detailagent{
+  color:#00e2ee !important;
+  margin:auto !important;
+  font-size:12px !important;
+  
+}
+.custombtn:hover{
+  background:linear-gradient(135deg, #00e2ee, #0099cc)!important;
+  color:#fff!important;
+}
+.wp-block-heading,.wp-block-heading span{
+  margin-bottom:15px !important;
+  font-size:20px !important;
+}

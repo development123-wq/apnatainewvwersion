@@ -17,7 +17,7 @@ const ServiceCard = () => {
           <div className="service-icon-box">
           <div className="icon-wrap">
             <Image
-                      src="/images/imgsec1.png"
+                      src="/images/Group-2.png"
                       alt="Background"
                       
                       priority
@@ -41,7 +41,7 @@ const ServiceCard = () => {
 
           <div className="icon-wrap">
            <Image
-                      src="/images/imgsec2.png"
+                      src="/images/Group-3.png"
                       alt="Background"
                       
                       priority
@@ -65,7 +65,7 @@ const ServiceCard = () => {
 
           <div className="icon-wrap">
             <Image
-                      src="/images/imgsec3.png"
+                      src="/images/Group-4.png"
                       alt="Background"
                       
                       priority

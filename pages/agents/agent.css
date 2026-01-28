@@ -10,17 +10,24 @@
 
 .agent-card {
   background: #ffffff;
+  
+  
+  display: flex;
+  gap: 35px;
+}
+.agent-card-custom{
+  background: #ffffff;
   padding: 35px;
   border-radius: 18px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.08);
   border: 1px solid #f0f0f0;
-  display: flex;
+  
   gap: 35px;
 }
 
 .agent-image {
   width: 320px;
-  height: 320px;
+  height: 265px;
   object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.12);
@@ -36,6 +43,7 @@
 .agent-short-desc {
   font-size: 18px;
   color: #666;
+  font-weight:'600';
   margin-bottom: 20px;
 }
 
@@ -138,4 +146,8 @@
     justify-content: center;
     flex-wrap: wrap;
   }
+}
+
+.Louproperty-card{
+  margin:0 12px;
 }

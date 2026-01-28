@@ -21,7 +21,7 @@ const About = () => {
     <InnerBanner/>
     <Aboutus/>
     
-    <WhyUs/>
+    {/* <WhyUs/> */}
     <Footer/>
 
 

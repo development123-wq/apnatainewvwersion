@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -20,12 +20,12 @@ body {
   color: var(--foreground);
   /* background: var(--background); */
   background-color: #fff;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 h1,h2,h3,h4,h5,h6,p,a{
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Inter", sans-serif !important;
   
 
 }
@@ -54,11 +54,15 @@ a {
     text-align:center;
     padding-top:50px;
     background-color: #fff;
+   font-family: "Instrument Sans", sans-serif !important;
+
 }
 .fancy-mainheading h2{
   font-size: 40px !important;;
   margin-bottom:0px !important;
   color:#000;
+   font-family: "Instrument Sans", sans-serif !important;
+
 }
 .fancy-mainheading span{
   color:#00E2EE;
@@ -250,6 +254,7 @@ header img{
 .Header-module__pU3tnq__contactInfo{
   grid-template-columns: repeat(2, 1fr)!important;
   display:grid!important;
+  font-family: "Poppins", sans-serif !important;
 
 }
 .Header-module__pU3tnq__bottomBar a{
@@ -257,7 +262,7 @@ header img{
 
 }
 .Header-module__pU3tnq__socialIcons{
-  display: none!important;;
+  display: none!important;
 }
 .Header-module__pU3tnq__navbar{
   z-index:9999999 !important;
@@ -382,4 +387,46 @@ font-size:10px;
   
   margin:auto;
   
+}
+
+.rent-label {
+  position: relative;
+  display: inline-block;
+  padding-right: 12px;
+  font-family: "Inter", sans-serif!important;
+}
+
+.rent-label::after {
+  content: "";
+  position: absolute;
+  right: -33px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-radius:500px;
+      border-top: 18px solid #0000;
+    border-bottom: 18px solid #0000;
+    border-left: 15px solid #000;
+}
+.agent-details h2{
+  color:#000;
+  font-size:40px;
+  font-weight:700;
+}
+.agent-details .contact-box h3{
+  color:#000;
+
+}
+.agent-description p,.contact-item span{
+  color:#000 !important;
+  font-size:15px;
+  font-family: "Inter", sans-serif;
+
+}
+.review-section p{
+  text-align:left;
+  font-family: 'Inter', sans-serif !important;
+  color:#000;
+
 }

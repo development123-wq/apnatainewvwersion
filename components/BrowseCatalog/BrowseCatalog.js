@@ -1,9 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import verify from '../../public/images/verified.png';
 import Image from "next/image";
 import "../../public/css/browsecatalog.css";
 import imglogo from "../../public/images/logo/Door-Logo-1-768x768.png";
+import Beds from "../../public/images/logo-amenities/bedrooms.png";
+import Bath from "../../public/images/logo-amenities/bathrooms.png";
+import Area from "../../public/images/logo-amenities/areafeet.png";
 
 export default function BrowseCatalog() {
   const itemsPerPage = 6;
@@ -16,6 +20,13 @@ export default function BrowseCatalog() {
   const stripHtml = (html) => {
     if (!html) return "";
     return html.replace(/<[^>]+>/g, "");
+  };
+
+  // ✅ Safe number conversion (handles undefined/commas/currency etc.)
+  const toNumber = (val) => {
+    if (val === null || val === undefined) return 0;
+    const n = Number(String(val).replace(/[^0-9.-]/g, ""));
+    return Number.isFinite(n) ? n : 0;
   };
 
   // 🔥 Format price with commas
@@ -53,13 +64,9 @@ export default function BrowseCatalog() {
       case "title-desc":
         return sorted.sort((a, b) => b.title.localeCompare(a.title));
       case "price-asc":
-        return sorted.sort(
-          (a, b) => parseInt(a.min_price) - parseInt(b.min_price)
-        );
+        return sorted.sort((a, b) => toNumber(a.min_price) - toNumber(b.min_price));
       case "price-desc":
-        return sorted.sort(
-          (a, b) => parseInt(b.min_price) - parseInt(a.min_price)
-        );
+        return sorted.sort((a, b) => toNumber(b.min_price) - toNumber(a.min_price));
       default:
         return items;
     }
@@ -119,24 +126,29 @@ export default function BrowseCatalog() {
                 />
 
                 <div className="catalog-card-content">
-                  <h3>{item.title}</h3>
+                 <a href={`/property/${item.slug}`}> 
+                    <h3 style={{ marginBottom: "10px" }}>{item.title}</h3></a>
 
-                  {/* √ Normal Description (HTML removed) */}
+                  {/* ✅ Description thoda bada (approx 2 lines more) */}
                   <p className="catalog-desc">
-                    {stripHtml(item.description).substring(0, 80)}...
+                    {stripHtml(item.description).substring(0, 160)}...
                   </p>
 
                   <div className="catalog-features">
-                    <span>🛏 {item.min_beds} Bedrooms</span>
-                    <span>🛁 {item.min_baths} Bathrooms</span>
-                    <span>📐 {item.min_area_sqft} m²</span>
+                    <div className="detail-item">
+                      <Image src={Beds} alt="amenities" /> {item.min_beds} Bedrooms
+                    </div>
+                    <div className="detail-item">
+                      <Image src={Bath} alt="amenities" /> {item.min_baths} Bathrooms
+                    </div>
+                    <div className="detail-item">
+                      <Image src={Area} alt="amenities" /> {item.min_area_sqft} m²
+                    </div>
                   </div>
                 </div>
 
                 <div className="catalog-card-footer">
-                  <span className="catalog-price">
-                    ฿{formatPrice(item.min_price)}
-                  </span>
+                  <span className="catalog-price">฿{formatPrice(item.min_price)}</span>
 
                   <a
                     href={`/property/${item.slug}`}
@@ -166,35 +178,51 @@ export default function BrowseCatalog() {
         {/* RIGHT SIDEBAR */}
         <div className="right-column">
           <h2>Agents List</h2>
-         
+
 
           <div className="right-column-one">
-            <Image
+           <a href="/agents/antoine-mouille" className="agent-anchor"> <Image
               src={imglogo}
               alt="imglogo"
-              className="property-image"
+              className="property-image property-image-agent"
               width="100"
               height="100"
-            />
-            <h3 style={{color:'#000'}}>Antoine Mouille</h3>
-            <a href="mailto:antoine@ap-natai.com" style={{lineHeight:'35px',color:'#000'}}>antoine@ap-natai.com</a>
+            /></a>
+             <a href="/agents/antoine-mouille" className="agent-anchor"><h3 style={{ color: "#000" }}>Antoine Mouille <Image style={{width:'20px',height:'20px',marginBottom:'-3px'}} src={verify}/></h3> </a>
+            <a
+              href="mailto:antoine@ap-natai.com"
+              style={{ lineHeight: "35px", color: "#000" }}
+            >
+              antoine@ap-natai.com
+            </a>
             <br />
-            <a href="tel:+660819799307" style={{color:'#000'}}>+66 (0) 81 979 9307</a>
+            <a href="tel:+660819799307" className="namenumber"  style={{ color: "#000" }}>
+              +66 (0) 81 979 9307
+            </a>
           </div>
+          
+
 
           <div className="right-column-one">
-            <Image
+           <a href="/agents/lou-mouille" className="agent-anchor"> <Image
               src={imglogo}
               alt="imglogo"
-              className="property-image"
+              className="property-image property-image-agent"
               width="100"
               height="100"
-            />
-            <h3 style={{color:'#000'}}>Lou Mouille</h3>
-            <a href="mailto:lou@ap-natai.com" style={{lineHeight:'35px',color:'#000'}}>lou@ap-natai.com</a>
+            /></a>
+            <a href="/agents/lou-mouille" className="agent-anchor"><h3 style={{ color: "#000" }}>Lou Mouille <Image style={{width:'20px',height:'20px',marginBottom:'-3px'}} src={verify}/></h3></a>            <a
+              href="mailto:lou@ap-natai.com"
+              style={{ lineHeight: "35px", color: "#000" }}
+            >
+              lou@ap-natai.com
+            </a>
             <br />
-            <a href="tel:+660980218331" style={{color:'#000'}}>+66 (0) 98 021 8331</a>
+            <a href="tel:+660980218331" className="namenumber"  style={{ color: "#000" }}>
+              +66 (0) 98 021 8331
+            </a>
           </div>
+       
         </div>
       </section>
     </>

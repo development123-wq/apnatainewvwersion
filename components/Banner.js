@@ -290,10 +290,10 @@ const Banner = () => {
         {/* LEFT FORM (For Rent) */}
         <div className="form-box">
           <div className="form-title form-title-one">
-            <p>For Rent</p>
+            <p className="rent-label">For Rent</p>
           </div>
 
-          <form onSubmit={handleRentSearch}>
+          <form onSubmit={handleRentSearch} className="formbannercustom">
             <label>Property Type</label>
             <select value={rentType} onChange={(e) => setRentType(e.target.value)}>
               {propertyTypes.length > 0 ? (
@@ -392,7 +392,7 @@ const Banner = () => {
         {/* RIGHT FORM (For Sale) */}
         <div className="form-box">
           <div className="form-title form-title-two">
-            <p>For Sale</p>
+            <p className="rent-label">For Sale</p>
           </div>
 
           <form onSubmit={handleRealEstateSearch}>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .testimonials-wrapper {
   padding: 50px 20px;
   padding-bottom:60px !important;
@@ -29,12 +30,12 @@
 
 .testimonial-card-content{
   border:1px solid #00E2EE;
-  padding-top:70px;
+  padding-top:55px;
   padding-left:20px;
   padding-right:20px;
-  padding-bottom:20px;
+  padding-bottom:5px;
   text-align: left;
-  box-shadow:0px 0px 10px #f1f1f1!important;
+  box-shadow:6px 4px 10px #0000000D!important;
   margin-top:-50px;
 }
 
@@ -167,3 +168,17 @@ border:3px solid #00E2EE;
   margin-top:20px;
 }
 
+@media(min-width:767px)
+{
+  .testidivcustom h3{
+    color:#000;
+    font-size:20px;
+  font-family: "Inter", sans-serif;
+  font-weight:600;
+
+
+  }
+  .testimonial-text p{
+    text-align:left;
+  }
+}

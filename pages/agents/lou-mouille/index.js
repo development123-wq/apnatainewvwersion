@@ -1,12 +1,15 @@
 'use client';
 import "../../../app/globals.css";
 import "../agent.css";
-
+import verify from '../../../public/images/verified.png';
+import Image from "next/image";
+import Reply from '../../../app/property/[slug]/leavereply';
+import { FaPhoneAlt, FaEnvelope,FaWhatsapp, FaMapMarkerAlt, FaInstagram, FaTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 import React, { useEffect, useState } from 'react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
-import AgentProperty from '../../../components/AgentPropertyLou';
 import InnerBanner from '../../../components/InnerBanner';
+import AgentProperty from '../../../components/AgentProperty';
 
 const ForRental = () => {
 
@@ -35,7 +38,7 @@ const ForRental = () => {
       <Header />
       <InnerBanner />
 
-      <div className="agent-container">
+      <div className="agent-container agent-card-custom">
         <div className="agent-card">
 
           {/* IMAGE */}
@@ -47,8 +50,9 @@ const ForRental = () => {
 
           {/* DETAILS */}
           <div className="agent-details">
-            <h2 style={{marginBottom:'20px'}}>{agent.title}</h2>
-            {/* <p className="agent-short-desc">{agent.short_description}</p> */}
+            <h2 style={{marginBottom:'20px'}}>{agent.title} <Image style={{width:'20px',height:'20px',marginBottom:'0px'}} src={verify}/></h2>
+            {/* <p className="short-desc-listing" style={{marginBottom:'20px'}}>{agent.short_description}</p> */}
+            <p className="agent-short-desc">{agent.short_description}</p>
 
             <div
               className="agent-description"
@@ -58,23 +62,23 @@ const ForRental = () => {
             {/* CONTACT */}
             <div className="contact-box">
               <h3>Contact Details</h3>
+              <div className="contact-agent">
 
-              <div className="contact-item">📞 <span>{agent.mobile}</span></div>
-              <div className="contact-item">💬 <span>{agent.whatsapp_number}</span></div>
-              <div className="contact-item">✉️ <span>{agent.email}</span></div>
+              <div className="contact-item"><FaPhoneAlt/> <span>{agent.mobile}</span></div>
+              <div className="contact-item"><FaWhatsapp/> <span>{agent.whatsapp_number}</span></div>
+              <div className="contact-item"><FaEnvelope/> <span>{agent.email}</span></div>
             </div>
+            </div>
+           
 
-            {/* BUTTONS */}
-            <div className="agent-buttons">
-              <a href={`tel:${agent.mobile}`} className="agent-btn call">Call Now</a>
-              <a href={`https://wa.me/${agent.whatsapp_number}`} className="agent-btn whatsapp">WhatsApp</a>
-              <a href={`mailto:${agent.email}`} className="agent-btn email">Email</a>
-            </div>
+            
           </div>
 
         </div>
+         <Reply/>
       </div>
-<AgentProperty/>
+      <AgentProperty/>
+
       <Footer />
     </>
   );

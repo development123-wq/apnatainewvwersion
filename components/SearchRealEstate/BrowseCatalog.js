@@ -151,6 +151,7 @@ export default function BrowseCatalog() {
                     padding: "50px",
                     fontSize: "20px",
                     fontWeight: "600",
+                    color:'#000',
                   }}
                 >
                   No property found for this search

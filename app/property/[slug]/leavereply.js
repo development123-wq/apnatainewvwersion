@@ -30,11 +30,11 @@ export default function LeaveReply() {
 
   return (
     <div className="reply-container" id="contactdealer" style={{maxWidth:'1200px',margin:'auto',marginBottom:'20px'}}>
-      <h2>Leave a Reply</h2>
+      <h2 style={{color:'#000' }}>Leave a Reply</h2>
 
       <form className="reply-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Name *</label>
+          <label style={{color:'#000' }}>Name *</label>
           <input
             type="text"
             name="name"
@@ -46,7 +46,7 @@ export default function LeaveReply() {
         </div>
 
         <div className="form-group">
-          <label>Email *</label>
+          <label style={{color:'#000' }}>Email *</label>
           <input
             type="email"
             name="email"
@@ -58,7 +58,7 @@ export default function LeaveReply() {
         </div>
 
         <div className="form-group">
-          <label>Website</label>
+          <label style={{color:'#000' }}>Website</label>
           <input
             type="url"
             name="website"
@@ -69,7 +69,7 @@ export default function LeaveReply() {
         </div>
 
         <div className="form-group">
-          <label>Comments *</label>
+          <label style={{color:'#000' }}>Comments *</label>
           <textarea
             name="comment"
             required

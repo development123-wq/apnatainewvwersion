@@ -1,73 +1,98 @@
-import React from 'react';
-import '../../public/css/AboutSection.css'; 
-import aboutimg from '../../public/images/about.png';
+'use client';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import '../../public/css/AboutSection.css'; 
 
+const IMAGE_BASE_URL = 'https://techzenondev.com/apnatai/storage/app/public/';
 
 const AboutSection = () => {
+  const [aboutData, setAboutData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchAboutData = async () => {
+      try {
+        const response = await fetch('https://techzenondev.com/apnatai/api/about-apnatai/1');
+        const result = await response.json();
+        
+        console.log('API Response:', result);
+        setAboutData(result.data);
+      } catch (error) {
+        console.error('Error:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAboutData();
+  }, []);
+
+  if (loading) return <div className="loading">Loading...</div>;
+  if (!aboutData) return <div>No data</div>;
+
   return (
     <>
-    <section className="about-section">
-      <div className="about-container">
-        {/* Left: Image */}
-        <div className="about-image">
-            <Image src={aboutimg} alt="Luxury Villa" width={600} height={400} />
+      {/* ✅ SECTION 1: section1_image LEFT + section1_description RIGHT */}
+      <section className="about-section">
+        <div className="about-container">
+          {/* LEFT: section1_image */}
+          {aboutData.section1_image && (
+            <div className="about-image">
+              <Image 
+                src={`${IMAGE_BASE_URL}${aboutData.section1_image}`} 
+                alt="About Section 1" 
+                width={600} 
+                height={400}
+                style={{objectFit: 'cover'}}
+                priority
+              />
+            </div>
+          )}
           
+          {/* RIGHT: section1_description */}
+          <div className="about-content">
+            <div 
+              dangerouslySetInnerHTML={{ __html: aboutData.section1_description }}
+            />
+          </div>
         </div>
+      </section>
 
-        {/* Right: Content */}
-        <div className="about-content">
-        
-          <h2 className="about-title">
-            Unlocking the Luxurious Secrets of Natai, Phang-Nga with AP-Natai
-          </h2>
-          <p className="about-description">
-         Natai, Phang-nga, a serene paradise nestled along the west coast of Thailand, offers an exquisite blend of pristine beaches, lush landscapes, and lucrative real estate opportunities.
-            </p>
-          <p className="about-description">
-          With its tranquil environments juxtaposed against robust property development, Natai has seamlessly intertwined tranquility with opulent living, emerging as a sought-after locale for investors and tranquility-seekers alike. AP-Natai, a pillar in this serene environment, plays a pivotal role in not only elevating the property market but also embedding sustainability and community into the luxurious lifestyle of Natai.
-           </p>
-          
+      {/* ✅ SECTION 2: Full Width section2_description */}
+      <section className="about-section">
+        <div className="about-content-full">
+          <div 
+            dangerouslySetInnerHTML={{ __html: aboutData.section2_description }}
+          />
         </div>
-      </div>
-      
-    </section>
+      </section>
 
-    <section className="about-section">
-      <div style={{width:'100%'}}>
-       
-
-        {/* Right: Content */}
-        <div className="about-content" style={{width:'100%',width:'1200px',margin:'auto'}}>
-        
-          <h2 className="about-title">
-           The Allure of Natai
-          </h2>
-          <p className="about-description">
-         Natai, Phang-nga, a serene paradise nestled along the west coast of Thailand, offers an exquisite blend of pristine beaches, lush landscapes, and lucrative real estate opportunities.
-            </p>
-          <p className="about-description">
-          With its tranquil environments juxtaposed against robust property development, Natai has seamlessly intertwined tranquility with opulent living, emerging as a sought-after locale for investors and tranquility-seekers alike. AP-Natai, a pillar in this serene environment, plays a pivotal role in not only elevating the property market but also embedding sustainability and community into the luxurious lifestyle of Natai.
-           </p>
-          
-        </div>
-         {/* <div className="about-content" style={{width:'100%',width:'1200px',margin:'auto'}}>
-        
-          <h2 className="about-title">
-           The Allure of Natai
-          </h2>
-          <p className="about-description">
-         Natai, Phang-nga, a serene paradise nestled along the west coast of Thailand, offers an exquisite blend of pristine beaches, lush landscapes, and lucrative real estate opportunities.
-            </p>
-          <p className="about-description">
-          With its tranquil environments juxtaposed against robust property development, Natai has seamlessly intertwined tranquility with opulent living, emerging as a sought-after locale for investors and tranquility-seekers alike. AP-Natai, a pillar in this serene environment, plays a pivotal role in not only elevating the property market but also embedding sustainability and community into the luxurious lifestyle of Natai.
-           </p>
-          
-        </div> */}
-      </div>
-      
-    </section>
+      {/* ✅ SECTION 3: section3_image LEFT + section3_description RIGHT */}
+      {aboutData.section3_image && (
+        <section className="about-section">
+          <div className="about-container">
+            {/* LEFT: section3_image */}
+            <div className="about-image">
+              <Image 
+                src={`${IMAGE_BASE_URL}${aboutData.section3_image}`} 
+                alt="Why Choose AP Natai" 
+                width={600} 
+                height={400}
+                style={{objectFit: 'cover'}}
+              />
+            </div>
+            
+            {/* RIGHT: section3_description */}
+            <div className="about-content">
+              <div 
+                dangerouslySetInnerHTML={{ __html: aboutData.section3_description }}
+              />
+            </div>
+          </div>
+        </section>
+      )}
     </>
-)};
+  );
+};
 
 export default AboutSection;

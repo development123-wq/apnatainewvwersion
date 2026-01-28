@@ -60,13 +60,10 @@ const InvestorSection = ({ page, n }) => {
   if (!maintitle && !title && !description && !image) return null;
 
   return (
-    <section className="business-section">
-      <h2
-        className="titleheadingowners"
-        style={{ width: "100%", textAlign: "center", fontSize: "35px", paddingTop: "30px" }}
-      >
-        {maintitle}
-      </h2>
+    <>
+   
+    <section className="business-section" id={`s${n}`}>
+      
 
       <div className="business-top">
         <div className="business-image">
@@ -81,6 +78,12 @@ const InvestorSection = ({ page, n }) => {
         </div>
 
         <div className="business-content">
+          <h2
+        className="titleheadingownerss"
+        style={{ width: "100%", textAlign: "center", fontSize: "35px", paddingTop: "30px" }}
+      >
+        {maintitle}
+      </h2>
           <h1 style={{fontSize: '2rem'}}>
             <TitleAccentTwoWords text={title} accentColor="#00e2ee" />
           </h1>
@@ -110,6 +113,7 @@ const InvestorSection = ({ page, n }) => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
@@ -155,6 +159,18 @@ export default function ForGuests() {
 
   return (
     <>
+     <section className="nav-buttons-section">
+  <div className="horizontal-nav-buttons">
+    <a href="#s1" className="nav-btn">SELLING</a>
+    <a href="#s2" className="nav-btn">LISTING</a>
+    <a href="#s3" className="nav-btn">SERVICES</a>
+    <a href="#s4" className="nav-btn">MANAGING</a>
+    <a href="#s5" className="nav-btn">MAINTAINING</a>
+    <a href="#s6" className="nav-btn">MARKETING</a>
+    <a href="#s7" className="nav-btn">SOURCING</a>
+    <a href="#s8" className="nav-btn">RENOVATING</a>
+  </div>
+</section>
       {sections.map((n) => (
         <React.Fragment key={n}>
           <InvestorSection page={page} n={n} />

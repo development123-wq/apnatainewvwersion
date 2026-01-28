@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .hero-banner {
   background-image: url('../images/banner/conatctbanner.jpg'); /* replace with your actual image path */
   background-size: cover;
@@ -62,4 +63,24 @@
 
 .hero-button:hover {
   background-color: #00E2EE;
+}
+@media(min-width:767px)
+{
+  .hero-sec-overlaymain h1{
+    font-size:40px !important;
+   font-family: "Instrument Sans", sans-serif !important;
+   line-height:45px !important;
+
+  }
+  .hero-subtitle{
+    font-size:20px !important;
+  font-family: "Inter", sans-serif;
+
+  }
+  .hero-sec-overlaymain{
+    padding:20px !important;
+  }
+  .overlay-contact,.hero-banner.contact-hero-banner{
+    height:340px !important;
+  }
 }

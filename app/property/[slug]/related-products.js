@@ -3,6 +3,12 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import "../../../public/css/browsecatalog.css";
+import imglogo from "../../../public/images/logo/Door-Logo-1-768x768.png";
+import Beds from "../../../public/images/logo-amenities/bedrooms.png";
+import Bath from "../../../public/images/logo-amenities/bathrooms.png";
+import Area from "../../../public/images/logo-amenities/areafeet.png";
+
+
 
 export default function BrowseCatalog() {
   const itemsPerPage = 6;
@@ -77,6 +83,7 @@ export default function BrowseCatalog() {
               fontSize: "40px",
               textAlign: "center",
               marginBottom: "20px",
+              color:'#000' 
             }}
           >
             Similar Properties
@@ -94,17 +101,23 @@ export default function BrowseCatalog() {
                 />
 
                 <div className="catalog-card-content">
-                  <h3>{item.title}</h3>
+                  <h3 style={{marginBottom:'10px'}}>{item.title}</h3>
 
                   <p className="catalog-desc">
                     {stripHtml(item.description).substring(0, 80)}...
                   </p>
 
                   <div className="catalog-features">
-                    <span>🛏 {item.min_beds} Bedrooms</span>
-                    <span>🛁 {item.min_baths} Bathrooms</span>
-                    <span>📐 {item.min_area_sqft} m²</span>
-                  </div>
+                                      <div className="detail-item">
+                                        <Image src={Beds} alt="amenities" /> {item.min_beds} Bedrooms
+                                      </div>
+                                      <div className="detail-item">
+                                        <Image src={Bath} alt="amenities" /> {item.min_baths} Bathrooms
+                                      </div>
+                                      <div className="detail-item">
+                                        <Image src={Area} alt="amenities" /> {item.min_area_sqft} m²
+                                      </div>
+                                    </div>
                 </div>
 
                 <div className="catalog-card-footer">
