@@ -1,0 +1,13 @@
+.contact-item svg{
+background: #00e2ee;
+    border-radius: 100px;
+    width: 25px;
+    height: 25px;
+    padding: 4px;
+    color:#fff;
+}
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}

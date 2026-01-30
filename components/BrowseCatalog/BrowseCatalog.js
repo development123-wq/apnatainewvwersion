@@ -87,6 +87,7 @@ export default function BrowseCatalog() {
         <title>Browse Catalog</title>
       </Head>
 
+
       {/* FILTER + SORT */}
       <section className="filterbytotal">
         <div className="filterbar-wrapper">

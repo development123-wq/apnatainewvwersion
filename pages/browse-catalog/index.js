@@ -8,13 +8,14 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import InnerBanner from '../../components/InnerBanner';
 import BrowseCatalog from '../../components/BrowseCatalog/BrowseCatalog';
+import Banner from '../../components/BrowseCatalog/CatalogBanner';
 
 
 const BrowseCataloge = () => {
   return (
     <>
     <Header/>
-    <InnerBanner/>
+  <Banner/>
     <BrowseCatalog/>
 
 

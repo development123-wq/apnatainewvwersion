@@ -175,3 +175,13 @@ form button {
   border-radius: 6px;
   border: 1px solid #ccc;
 }
+
+@media(max-width:767px)
+{
+  .titlelarge-custom{
+    font-size:30px !important;
+  }
+  .learn-more{
+    font-size:12px !important;
+  }
+}

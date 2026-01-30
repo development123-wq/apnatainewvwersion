@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import { FaPhoneAlt, FaEnvelope,FaWhatsapp, FaMapMarkerAlt, FaInstagram, FaTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
+import './agentscard.css';
 export default function AgentsList() {
   const [agents, setAgents] = useState([]);
 
@@ -99,8 +100,8 @@ export default function AgentsList() {
           <p
             style={{
               fontSize: "15px",
-              lineHeight: 1.6,
-              color: "#444",
+              lineHeight: '23px',
+              color: "#868686",
             }}
             className="description-agent"
           >
@@ -113,12 +114,15 @@ export default function AgentsList() {
           <div
             style={{
               marginTop: "15px",
-              color: "#555",
+              color: "#000",
               fontSize: "14px",
+              display:'flex',
+              gap:'30px',
             }}
+            
           >
-            <p>📞 Mobile: {agent.mobile}</p>
-            <p>💬 WhatsApp: {agent.whatsapp_number}</p>
+            <p className="contact-item"><FaPhoneAlt/> <span> {agent.mobile}</span></p>
+            <p className="contact-item"><FaWhatsapp/> <span> {agent.whatsapp_number}</span></p>
           </div>
 
           {/* Button */}

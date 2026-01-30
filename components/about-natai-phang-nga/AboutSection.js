@@ -69,7 +69,7 @@ const AboutSection = () => {
 
       {/* ✅ SECTION 3: section3_image LEFT + section3_description RIGHT */}
       {aboutData.section3_image && (
-        <section className="about-section">
+        <section className="about-section about-section-extra-custom2">
           <div className="about-container">
             {/* LEFT: section3_image */}
             <div className="about-image">

@@ -74,6 +74,7 @@ grid-template-columns: repeat(3, 1fr);
     font-family: Inter, sans-serif !important;
     font-size: 20px !important;
     line-height: 29px !important;
+    margin-bottom:15px !important;
 }
 
 .catalog-desc {
@@ -81,7 +82,7 @@ grid-template-columns: repeat(3, 1fr);
     text-align: left !important;
     font-family: Inter, sans-serif !important;
     font-size: 14px !important;
-    line-height: 20px !important;
+    line-height: 23px !important;
     margin-bottom:30px;
 }
 

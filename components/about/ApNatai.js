@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const ApNatai = () => {
   return (
-    <section className="about-section">
+    <section className="about-section about-section-extra-custom">
       <div className="about-container">
         {/* Left: Image */}
         <div className="about-image">

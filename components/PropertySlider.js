@@ -124,7 +124,7 @@ export default function PropertySlider() {
                     </Link>
                     
                     {/* ✅ DESCRIPTION = 20 WORDS MAX + HTML STRIP */}
-                    <p className="property-location" style={{color:'#666', fontSize:'14px', margin:'5px 0 10px 0'}}>
+                    <p className="property-description" style={{color:'#666', fontSize:'14px', margin:'5px 0 10px 0'}}>
                      {truncateDescription(item.description)}
                     </p>
 

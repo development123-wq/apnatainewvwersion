@@ -77,7 +77,7 @@
   
 }
 .about-section{
-  padding:20px 0px!important;
+  padding:50px 0px 20px 0px!important;
   max-width:1200px !important;
   margin:auto !important;
 }
@@ -100,7 +100,15 @@
 }
 .about-section p,.about-content p span{
   font-size: 16px !important;
-    line-height: 23px!important;
+    line-height: 25px!important;
     color:#000 !important;
     margin-bottom:20px !important;
+}
+
+.about-section-extra-custom{
+  padding-bottom:50px !important;
+}
+.about-section-extra-custom2{
+  padding-top:10px !important;
+  padding-bottom:50px !important;
 }

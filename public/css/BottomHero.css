@@ -46,14 +46,14 @@
     /* **CHANGED:** Width aur positioning adjust kiye gaye hain */
     width: 50%; 
     max-width: 600px; /* Max width add kiya gaya hai, optional */
-    background-color: #181828; /* Solid dark color (opacity 0.95 se 1c1c2a kar diya) */
+    background-color: #181828d4; /* Solid dark color (opacity 0.95 se 1c1c2a kar diya) */
     color: white;
     padding: 60px; /* Padding badhaya gaya hai */
     box-sizing: border-box;
     
     /* **CHANGED: Absolute positioning** */
     position: absolute;
-    top: 15%; /* Top se distance */
+    top: 35%; /* Top se distance */
     left: 0; /* Left se chipka hua */
     bottom: 0; /* Bottom se distance */
     z-index: 10; /* Image ke upar dikhne ke liye */
@@ -70,6 +70,7 @@
     font-size: 1rem;
     margin-bottom: 40px; /* Margin badhaya gaya hai */
     opacity: 0.85; /* Opacity adjust ki gayi hai */
+    line-height: 25px !important;
 }
 
 .cta-button {

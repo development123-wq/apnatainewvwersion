@@ -8,7 +8,7 @@ import ServiceCard from '../components/ServiceCard';
 import BottomHeroSection from '../components/BottomHeroSection';
 import AgentSlider from '../components/AgentSlider';
 import ContactBanner from '../components/ContactBanner';
-import Testimonials from '../components/Testimonials';
+import Testimonials from '../components/GoogleReviews';
 import BlogSection from '../components/BlogSection';
 import Partners from '../components/Partners';
 import Footer from '../components/Footer';

@@ -12,12 +12,12 @@ const BottomHero = () => {
             Escape The Ordinary <br />
             Embrace The Ocean
           </h1>
-          <p className="subtext">
+          <p className="subtext" style={{marginBottom:'0px'}}>
             Interested In Working Together? Fill Out Some Info And We Will Be In Touch Shortly. We Can't Wait To Hear From You! Lorem Ipsum Is Simply Dummy Text Of The Printing Industry.
           </p>
-          <button className="cta-button">
+          {/* <button className="cta-button">
             Request Your Service
-          </button>
+          </button> */}
         </div>
 
         <div className="stats-bar stats-bar-custom">

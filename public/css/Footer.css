@@ -1,5 +1,6 @@
 .footer {
-  background: url('/images/footer-bg.jpg');
+  background: url('/images/footer-bg.jpg') no-repeat center;
+  background-size: cover;
   color: white;
   padding: 40px 60px;
   font-family: 'Arial', sans-serif;

@@ -81,7 +81,7 @@ const About = () => {
 
     {/* Why section start */}
 
-    <section className="about-section">
+    <section className="about-section about-section-extra-custom">
           <div className="about-container">
             
     

@@ -90,13 +90,13 @@ const Footer = () => {
             <div className="property-types">
               <h3>PROPERTY TYPES</h3>
               <ul>
-                <li><a href="#">Apartment</a></li>
-                <li><a href="#">Condo</a></li>
-                <li><a href="#">House</a></li>
-                <li><a href="#">Land Plots</a></li>
-                <li><a href="#">Penthouse</a></li>
-                <li><a href="#">Townhouse</a></li>
-                <li><a href="#">Villa</a></li>
+                <li><a href="/search-for-real-estate?type=2&location=11&landsize=800&budget=0-5000">Apartment</a></li>
+                <li><a href="/search-for-real-estate?type=3&location=11&landsize=800&budget=0-5000">Condo</a></li>
+                <li><a href="/search-for-real-estate?type=4&location=11&landsize=800&budget=0-5000">House</a></li>
+                <li><a href="/search-for-real-estate?type=5&location=11&landsize=800&budget=0-5000">Land Plots</a></li>
+                <li><a href="/search-for-real-estate?type=9&location=11&landsize=800&budget=0-5000">Inland Villa</a></li>
+                <li><a href="/search-for-real-estate?type=6&location=11&landsize=800&budget=0-5000">Townhouse</a></li>
+                <li><a href="/search-for-real-estate?type=7&location=11&landsize=800&budget=0-5000">Villa</a></li>
               </ul>
             </div>
             </div>
@@ -115,7 +115,7 @@ const Footer = () => {
                 <a href="https://www.linkedin.com/company/apnataibeach/"><FaLinkedinIn /></a>
                 <a href="https://www.facebook.com/apnataibeach"><FaFacebookF /></a>
               </div><br></br>
-          <ul  className="footer-bottom-mobile-view" style={{columnCount:'3',listStyleType:'none'}}> <li style={{borderRight:'1px solid #dcdcdc60',textAlign:'center'}}><a href="/privacy-policy">Privacy Policy</a></li> <li style={{borderRight:'1px solid #dcdcdc60',textAlign:'center'}}><a href="/cookie-policy">Cookie Policy</a></li> <li><a href="/terms-conditions1">Terms & Conditions</a></li> </ul>
+          <ul  className="footer-bottom-mobile-view" style={{columnCount:'3',listStyleType:'none'}}> <li style={{borderRight:'1px solid #dcdcdc60',textAlign:'center'}}><a href="/privacy-policy">Privacy Policy</a></li> <li style={{borderRight:'1px solid #dcdcdc60',textAlign:'center'}}><a href="/cookie-policy">Cookie Policy</a></li> <li><a href="/terms-conditions">Terms & Conditions</a></li> </ul>
 
             </div>
           </div>
@@ -123,8 +123,8 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="footer-bottom">
-          <p>Copyright© 2025 | AP Natai | All Rights Reserved.</p>
-          <ul  className="footer-bottom-mobile-hide" style={{columnCount:'3',listStyleType:'none'}}> <li style={{borderRight:'1px solid #dcdcdc60',textAlign:'center'}}><a href="/privacy-policy">Privacy Policy</a></li> <li style={{borderRight:'1px solid #dcdcdc60',textAlign:'center'}}><a href="/cookie-policy">Cookie Policy</a></li> <li><a href="/terms-conditions1">Terms & Conditions</a></li> </ul>
+          <p>Copyright© 2026 | AP Natai | All Rights Reserved. Designed & Developed by <a href="https://techzenon.com">Tech Zenon</a></p>
+          <ul  className="footer-bottom-mobile-hide" style={{columnCount:'3',listStyleType:'none'}}> <li style={{borderRight:'1px solid #dcdcdc60',textAlign:'center'}}><a href="/privacy-policy">Privacy Policy</a></li> <li style={{borderRight:'1px solid #dcdcdc60',textAlign:'center'}}><a href="/cookie-policy">Cookie Policy</a></li> <li><a href="/terms-conditions">Terms & Conditions</a></li> </ul>
         </div>
       </footer>
     </>
